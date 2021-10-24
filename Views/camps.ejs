@@ -1,0 +1,8 @@
+<%- layout('./layout/boilerplate.ejs') %>
+<h1>All Camps</h1>
+<ul>
+    <% for(let camp of allCamps){ %>
+        <li><a href="/campgrounds/<%=camp.id%>"><%=camp.title%></a></li>
+    <% } %>
+</ul>
+<form action="/campgrounds/insert"><button>Add New Camp</button></form>

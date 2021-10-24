@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Camp</title>
+</head>
+<body>
+<form action="/campgrounds/insert" method="post">
+    <label for="title">Camp Name:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="location">Camp Location:</label>
+    <input type="text" id="location" name="location">
+
+    <label for="price">Camp Price:</label>
+    <input type="number" min="0" max="100" id="price" name="price">
+
+    <label for="description">Camp Descriptor:</label>
+    <select name="description" id="description">
+        <%for(let ele of descriptors){ %>
+            <option value="<%=ele%>"><%=ele%></option>
+        <% } %>
+    </select>
+    <button>Add Camp</button>
+</form>
+<a href="/campgrounds">Back To All Camps</a>
+</body>
+</html>
